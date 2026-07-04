@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --teal: #1B7A8A;
+  --teal-light: #2A9BAC;
+  --teal-pale: #E8F4F6;
+  --teal-faint: #F0F8FA;
+  --dark: #0D1B1E;
+  --mid: #3A5057;
+  --muted: #7A9199;
+  --border: #DCE9EC;
+  --light: #F5F9FA;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Sora', sans-serif !important;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.fade-in-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
