@@ -10,6 +10,7 @@ import {
   DOMAIN_PRICES,
   FRONTEND,
   HOSTING_GUIDE,
+  PAYMENT_INTEGRATION_COST,
   formatEuro,
   getHostingHint,
   type DomainTld,
@@ -157,8 +158,8 @@ export default function CostCalculator() {
     },
     {
       show: costs.payment > 0,
-      labelSq: "Integrim pagesash online, një herë",
-      labelEn: "Online payment setup, one time",
+      labelSq: "Pagesa me kartë, një herë",
+      labelEn: "Card payment setup, one time",
       value: costs.payment,
     },
   ];
@@ -311,14 +312,14 @@ export default function CostCalculator() {
                   />
                   <div>
                     <p className="font-semibold text-sm text-[var(--dark)]">
-                      {t("Integrim pagesash online", "Online payment integration")}
+                      {t("Pagesa me kartë", "Card payment")}
                     </p>
                     <p className="text-xs text-[var(--mid)] mt-0.5">
                       {t(
-                        "Konfigurim i pagesave online, kosto shtesë një herë.",
-                        "Online checkout setup, one time extra cost."
+                        "Konfigurim i pagesave me kartë (debit/kredit), kosto shtesë një herë.",
+                        "Debit and credit card checkout setup, one time extra cost."
                       )}{" "}
-                      <span className="text-[var(--teal)] font-semibold">+{formatEuro(99)}</span>
+                      <span className="text-[var(--teal)] font-semibold">+{formatEuro(PAYMENT_INTEGRATION_COST)}</span>
                     </p>
                   </div>
                 </label>

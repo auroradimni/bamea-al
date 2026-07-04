@@ -81,7 +81,7 @@ export const BACKEND_ECOMMERCE: Record<
   },
 };
 
-export const PAYMENT_INTEGRATION_COST = 99;
+export const PAYMENT_INTEGRATION_COST = 50;
 
 /** Client-facing hosting price guide (no vendor names) */
 export const HOSTING_GUIDE = {

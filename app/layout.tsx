@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BAMEA — Web • Brand • Growth",
+  title: "BAMEA",
   description: "We build websites that move your business forward. Web design, branding & development in Albania.",
 };
 
