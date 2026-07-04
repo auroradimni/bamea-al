@@ -3,7 +3,7 @@ import { useLang } from "@/context/LanguageContext";
 import Logo from "@/components/Logo";
 
 const EMAIL = "bameatech@gmail.com";
-const INSTAGRAM = "https://instagram.com/bameatech";
+const INSTAGRAM = "https://instagram.com/bamea.al";
 
 const socials = [
   { label: "Instagram", icon: <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-white/70 fill-none stroke-[1.8]"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" className="fill-white/70 stroke-none"/></svg>, href: INSTAGRAM },
