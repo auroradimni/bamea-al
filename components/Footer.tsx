@@ -14,7 +14,7 @@ export default function Footer() {
   const { t } = useLang();
   return (
     <footer className="bg-[var(--dark,#0D1B1E)] text-white/60 pt-16 pb-8 px-6 md:px-[5vw]">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-12 pb-12 border-b border-white/8">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-12 pb-12 border-b border-white/8">
         <div className="col-span-2 md:col-span-1">
           <a href="/" className="inline-block mb-4 no-underline">
             <Logo variant="dark" showTagline className="h-[58px] w-auto" />
@@ -43,18 +43,6 @@ export default function Footer() {
               { href:"#kontakt", sq:"Kontakt", en:"Contact" },
             ].map(l => (
               <li key={l.sq}><a href={l.href} className="text-white/55 text-sm hover:text-white transition-colors no-underline">{t(l.sq,l.en)}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-white/30 text-xs font-bold uppercase tracking-widest mb-4">{t("LIGJORE", "LEGAL")}</h4>
-          <ul className="space-y-2.5">
-            {[
-              { sq:"Politika e privatësisë", en:"Privacy Policy" },
-              { sq:"Kushtet e përdorimit", en:"Terms of Use" },
-            ].map(l => (
-              <li key={l.sq}><a href="#" className="text-white/55 text-sm hover:text-white transition-colors no-underline">{t(l.sq,l.en)}</a></li>
             ))}
           </ul>
         </div>
