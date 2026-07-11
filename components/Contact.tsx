@@ -1,10 +1,29 @@
 "use client";
+
+import { useState } from "react";
 import { useLang } from "@/context/LanguageContext";
 
 const EMAIL = "info@bamea.al";
 
 export default function Contact() {
   const { t } = useLang();
+  const [copied, setCopied] = useState(false);
+
+  const subject = encodeURIComponent(
+    t("Kërkesë për projekt — BAMEA", "Project inquiry — BAMEA")
+  );
+  const mailtoHref = `mailto:${EMAIL}?subject=${subject}`;
+  const gmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}&su=${subject}`;
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // ignore
+    }
+  };
 
   const contactItems = [
     {
@@ -16,7 +35,7 @@ export default function Contact() {
       ),
       label: t("Email", "Email"),
       value: EMAIL,
-      href: `mailto:${EMAIL}`,
+      href: mailtoHref,
     },
     {
       icon: (
@@ -74,12 +93,31 @@ export default function Contact() {
             ))}
           </div>
 
-          <div className="text-center pt-2 border-t border-[var(--border)]">
+          <div className="text-center pt-2 border-t border-[var(--border)] space-y-3">
             <a
-              href={`mailto:${EMAIL}`}
+              href={gmailHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                void copyEmail();
+              }}
               className="bg-[var(--teal)] text-white px-8 py-3.5 rounded-lg font-semibold text-sm inline-flex items-center gap-2 hover:bg-[var(--teal-light)] transition-all hover:-translate-y-0.5 no-underline mt-8"
             >
               {t("Na dërgo email", "Send us an email")} →
+            </a>
+            <p className="text-xs text-[var(--muted)]">
+              {copied
+                ? t("Email u kopjua: info@bamea.al", "Email copied: info@bamea.al")
+                : t(
+                    "Hapet Gmail, ose shkruaj te info@bamea.al",
+                    "Opens Gmail, or write to info@bamea.al"
+                  )}
+            </p>
+            <a
+              href={mailtoHref}
+              className="block text-xs text-[var(--teal)] hover:underline no-underline"
+            >
+              {t("Ose hap aplikacionin e emailit", "Or open your email app")}
             </a>
           </div>
         </div>
