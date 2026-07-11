@@ -2,7 +2,7 @@
 import { useLang } from "@/context/LanguageContext";
 import Logo from "@/components/Logo";
 
-const EMAIL = "bameatech@gmail.com";
+const EMAIL = "info@bamea.al";
 const INSTAGRAM = "https://instagram.com/bamea.al";
 
 const socials = [

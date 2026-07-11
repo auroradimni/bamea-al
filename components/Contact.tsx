@@ -1,7 +1,7 @@
 "use client";
 import { useLang } from "@/context/LanguageContext";
 
-const EMAIL = "bameatech@gmail.com";
+const EMAIL = "info@bamea.al";
 
 export default function Contact() {
   const { t } = useLang();
