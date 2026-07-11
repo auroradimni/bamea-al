@@ -3,11 +3,12 @@ import { useLang } from "@/context/LanguageContext";
 import Logo from "@/components/Logo";
 
 const EMAIL = "info@bamea.al";
+const EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`;
 const INSTAGRAM = "https://instagram.com/bamea.al";
 
 const socials = [
   { label: "Instagram", icon: <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-white/70 fill-none stroke-[1.8]"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" className="fill-white/70 stroke-none"/></svg>, href: INSTAGRAM },
-  { label: "Email", icon: <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-white/70 fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>, href: `mailto:${EMAIL}` },
+  { label: "Email", icon: <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-white/70 fill-none stroke-[1.8] stroke-linecap-round stroke-linejoin-round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>, href: EMAIL_HREF },
 ];
 
 export default function Footer() {
@@ -53,6 +54,7 @@ export default function Footer() {
         <div className="flex gap-3">
           {socials.map(s => (
             <a key={s.label} href={s.href} aria-label={s.label}
+              target="_blank" rel="noopener noreferrer"
               className="w-8 h-8 rounded-lg bg-white/8 flex items-center justify-center hover:bg-[var(--teal)] transition-colors no-underline">
               {s.icon}
             </a>

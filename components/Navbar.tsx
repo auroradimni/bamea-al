@@ -6,6 +6,7 @@ import { useLang, LANG_OPTIONS } from "@/context/LanguageContext";
 import Logo from "@/components/Logo";
 
 const EMAIL = "info@bamea.al";
+const EMAIL_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`;
 const INSTAGRAM = "https://instagram.com/bamea.al";
 
 const navLinks = [
@@ -30,7 +31,7 @@ const socials = [
   },
   {
     label: "Email",
-    href: `mailto:${EMAIL}`,
+    href: EMAIL_HREF,
     icon: <Mail size={20} strokeWidth={1.75} />,
   },
 ];
