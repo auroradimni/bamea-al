@@ -51,6 +51,10 @@ export const BACKEND_BUSINESS = {
 
 export const BACKEND_BUSINESS_YEAR = BACKEND_BUSINESS.year;
 
+/**
+ * Store hosting tiers (client-facing, fixed yearly).
+ * Based on typical Railway Hobby capacity — product count is a guide, not a hard server limit.
+ */
 export const BACKEND_ECOMMERCE: Record<
   ProductTier,
   { year: number; monthly: number; nameSq: string; nameEn: string; noteSq: string; noteEn: string }
@@ -58,24 +62,24 @@ export const BACKEND_ECOMMERCE: Record<
   small: {
     year: 60,
     monthly: 5,
-    nameSq: "Hosting dyqani, deri 100 produkte (1 vit)",
-    nameEn: "Store hosting, up to 100 products (1 year)",
+    nameSq: "Hosting dyqani, deri 400 produkte (1 vit)",
+    nameEn: "Store hosting, up to 400 products (1 year)",
     noteSq: "Rreth €5/muaj",
     noteEn: "About €5/month",
   },
   medium: {
     year: 120,
     monthly: 10,
-    nameSq: "Hosting dyqani, 101–200 produkte (1 vit)",
-    nameEn: "Store hosting, 101–200 products (1 year)",
+    nameSq: "Hosting dyqani, 401–1.000 produkte (1 vit)",
+    nameEn: "Store hosting, 401–1,000 products (1 year)",
     noteSq: "Rreth €10/muaj",
     noteEn: "About €10/month",
   },
   large: {
     year: 240,
     monthly: 20,
-    nameSq: "Hosting dyqani, 200+ produkte (1 vit)",
-    nameEn: "Store hosting, 200+ products (1 year)",
+    nameSq: "Hosting dyqani, 1.000+ produkte (1 vit)",
+    nameEn: "Store hosting, 1,000+ products (1 year)",
     noteSq: "Rreth €20/muaj",
     noteEn: "About €20/month",
   },
@@ -88,20 +92,20 @@ export const HOSTING_GUIDE = {
   sq: [
     "Landing page: hosting falas",
     "Business page: ~€60/vit",
-    "Dyqan deri 100 produkte: ~€60/vit",
-    "101–200 produkte: ~€120/vit · 200+: ~€240/vit",
+    "Dyqan deri 400 produkte: ~€60/vit",
+    "401–1.000 produkte: ~€120/vit · 1.000+: ~€240/vit",
   ],
   en: [
     "Landing page: free hosting",
     "Business page: ~€60/year",
-    "Store up to 100 products: ~€60/year",
-    "101–200 products: ~€120/year · 200+: ~€240/year",
+    "Store up to 400 products: ~€60/year",
+    "401–1,000 products: ~€120/year · 1,000+: ~€240/year",
   ],
 };
 
 export function getProductTier(count: number): ProductTier {
-  if (count > 200) return "large";
-  if (count > 100) return "medium";
+  if (count > 1000) return "large";
+  if (count > 400) return "medium";
   return "small";
 }
 
@@ -170,7 +174,5 @@ export function formatEuro(amount: number) {
 }
 
 export function getHostingHint(count: number) {
-  if (count > 200) return BACKEND_ECOMMERCE.large;
-  if (count > 100) return BACKEND_ECOMMERCE.medium;
-  return BACKEND_ECOMMERCE.small;
+  return BACKEND_ECOMMERCE[getProductTier(count)];
 }
