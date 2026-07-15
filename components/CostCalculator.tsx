@@ -288,7 +288,7 @@ export default function CostCalculator() {
                   <input
                     type="range"
                     min={1}
-                    max={1500}
+                    max={2000}
                     step={1}
                     value={productCount}
                     onChange={(e) => setProductCount(Number(e.target.value))}
@@ -296,8 +296,8 @@ export default function CostCalculator() {
                   />
                   <div className="flex justify-between text-[10px] text-[var(--muted)] mt-1">
                     <span>1</span>
-                    <span>400</span>
-                    <span>1.000+</span>
+                    <span>600</span>
+                    <span>1.500+</span>
                   </div>
                   <p className="text-xs text-[var(--mid)] mt-3 leading-relaxed">
                     {hostingHint(productCount, t)}

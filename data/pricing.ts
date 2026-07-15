@@ -62,24 +62,24 @@ export const BACKEND_ECOMMERCE: Record<
   small: {
     year: 60,
     monthly: 5,
-    nameSq: "Hosting dyqani, deri 400 produkte (1 vit)",
-    nameEn: "Store hosting, up to 400 products (1 year)",
+    nameSq: "Hosting dyqani, deri 600 produkte (1 vit)",
+    nameEn: "Store hosting, up to 600 products (1 year)",
     noteSq: "Rreth €5/muaj",
     noteEn: "About €5/month",
   },
   medium: {
     year: 120,
     monthly: 10,
-    nameSq: "Hosting dyqani, 401–1.000 produkte (1 vit)",
-    nameEn: "Store hosting, 401–1,000 products (1 year)",
+    nameSq: "Hosting dyqani, 601–1.500 produkte (1 vit)",
+    nameEn: "Store hosting, 601–1,500 products (1 year)",
     noteSq: "Rreth €10/muaj",
     noteEn: "About €10/month",
   },
   large: {
     year: 240,
     monthly: 20,
-    nameSq: "Hosting dyqani, 1.000+ produkte (1 vit)",
-    nameEn: "Store hosting, 1,000+ products (1 year)",
+    nameSq: "Hosting dyqani, 1.500+ produkte (1 vit)",
+    nameEn: "Store hosting, 1,500+ products (1 year)",
     noteSq: "Rreth €20/muaj",
     noteEn: "About €20/month",
   },
@@ -92,20 +92,20 @@ export const HOSTING_GUIDE = {
   sq: [
     "Landing page: hosting falas",
     "Business page: ~€60/vit",
-    "Dyqan deri 400 produkte: ~€60/vit",
-    "401–1.000 produkte: ~€120/vit · 1.000+: ~€240/vit",
+    "Dyqan deri 600 produkte: ~€60/vit",
+    "601–1.500 produkte: ~€120/vit · 1.500+: ~€240/vit",
   ],
   en: [
     "Landing page: free hosting",
     "Business page: ~€60/year",
-    "Store up to 400 products: ~€60/year",
-    "401–1,000 products: ~€120/year · 1,000+: ~€240/year",
+    "Store up to 600 products: ~€60/year",
+    "601–1,500 products: ~€120/year · 1,500+: ~€240/year",
   ],
 };
 
 export function getProductTier(count: number): ProductTier {
-  if (count > 1000) return "large";
-  if (count > 400) return "medium";
+  if (count > 1500) return "large";
+  if (count > 600) return "medium";
   return "small";
 }
 
